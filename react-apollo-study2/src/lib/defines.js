@@ -47,6 +47,7 @@ export const VIEW_GET_HOME = gql`
   }
 `;
 
+// NOTE: TodoList
 // SECTION: TodoList
 // SECTION: TodoList
 export const ADD_TODO = gql`
