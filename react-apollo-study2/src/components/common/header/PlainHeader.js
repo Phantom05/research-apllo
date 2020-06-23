@@ -11,6 +11,9 @@ function PlainHeader(props) {
       <NavLink to="/login" className="nav__item">
         SignIn
       </NavLink>
+      <NavLink to="/todo" className="nav__item">
+        Todo List
+      </NavLink>
     </Styled.PlainHeader>
   );
 }

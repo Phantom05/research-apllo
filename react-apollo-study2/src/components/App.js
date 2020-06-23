@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, SignIn } from 'pages';
+import { Home, SignIn, TodoList } from 'pages';
 import { Helmet } from 'react-helmet';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={SignIn} />
+        <Route exact path="/todo" component={TodoList} />
       </Switch>
     </>
   );
