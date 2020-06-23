@@ -39,6 +39,9 @@ function TodoListForm(props) {
    */
   const handleClick = config => {
     const { type, name } = config;
+    if (type === 'load') {
+      console.log('load 하기');
+    }
     if (type === 'update') {
       if (name === 'insert') {
         if (valuesInput?.trim() === '') return;
@@ -46,6 +49,9 @@ function TodoListForm(props) {
           draft.list = valuesTodoList.concat(valuesInput);
           draft.input = '';
         });
+      }
+      if (name === 'delete') {
+        console.log('delete');
       }
     }
   };
@@ -55,7 +61,7 @@ function TodoListForm(props) {
    */
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('handleSubmit');
+    console.log('save 하기');
     // graphql mutation 날리기
   };
 
@@ -64,6 +70,9 @@ function TodoListForm(props) {
       <h2>Todo List</h2>
       <form action="" onSubmit={handleSubmit}>
         <div>
+          <button type="button" onClick={() => handleClick({ type: 'load' })}>
+            Load
+          </button>
           <button type="submit">Save</button>
         </div>
         <input
