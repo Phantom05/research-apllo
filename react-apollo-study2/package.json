@@ -13,9 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "use-immer": "^0.4.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.10.3",
@@ -31,18 +36,6 @@
     "postcss-modules": "^2.0.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
-    "homepage": ".",
-    "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
-    }
+    "homepage": "."
   }
 }

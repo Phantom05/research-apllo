@@ -1,0 +1,163 @@
+.DocumentationPanel .doc-explorer {
+  background: #f7f7f7;
+}
+
+.DocumentationPanel .doc-explorer-title-bar {
+  cursor: default;
+  display: -webkit-flex;
+  display: flex;
+  height: 46px;
+  line-height: 14px;
+  padding: 3px 3px 5px;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.DocumentationPanel .doc-explorer-title {
+  padding: 13px 0;
+  font-weight: 200;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  -webkit-flex: 1;
+  flex: 1;
+  height: 40px;
+}
+
+.DocumentationPanel .doc-explorer-back {
+  color: #222222;
+  cursor: pointer;
+  margin: -7px 0 -6px -8px;
+  overflow: hidden;
+  padding: 21px 12px 21px 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.DocumentationPanel .doc-explorer-back:before {
+  border-left: 2px solid #222222;
+  border-top: 2px solid #222222;
+  content: '';
+  display: inline-block;
+  height: 9px;
+  margin: 0 3px 0 0;
+  position: relative;
+  width: 9px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.DocumentationPanel .doc-explorer-rhs {
+  position: relative;
+}
+
+.DocumentationPanel .doc-explorer-contents {
+  background-color: #ffffff;
+  border-top: 1px solid $border-color;
+  bottom: 0;
+  left: 0;
+  min-width: 300px;
+  overflow-y: auto;
+  padding: 20px 15px;
+  position: absolute;
+  right: 0;
+  top: 46px;
+}
+
+.DocumentationPanel .doc-type-description p:first-child ,
+.DocumentationPanel .doc-type-description blockquote:first-child {
+  margin-top: 0;
+}
+
+.DocumentationPanel .doc-explorer-contents a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.DocumentationPanel .doc-explorer-contents a:hover {
+  text-decoration: underline;
+}
+
+.DocumentationPanel .doc-value-description {
+  padding: 4px 0 8px 12px;
+}
+
+.DocumentationPanel .doc-category {
+  margin: 20px 0;
+}
+
+.DocumentationPanel .doc-category-title {
+  border-bottom: 1px solid #e0e0e0;
+  color: #777;
+  cursor: default;
+  font-size: 14px;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0 -15px 10px 0;
+  padding: 10px 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.DocumentationPanel .doc-category-item {
+  margin: 12px 0;
+  color: #555;
+}
+
+.DocumentationPanel .keyword {
+  color: #B11A04;
+}
+
+.DocumentationPanel .type-name {
+  color: #CA9800;
+}
+
+.DocumentationPanel .field-name {
+  color: #1F61A0;
+}
+
+.DocumentationPanel .value-name {
+  color: #0B7FC7;
+}
+
+.DocumentationPanel .arg-name {
+  color: #8B2BB9;
+}
+
+.DocumentationPanel .arg:after {
+  content: ', ';
+}
+
+.DocumentationPanel .arg:last-child:after {
+  content: '';
+}
+
+.DocumentationPanel .doc-alert-text {
+  color: #F00F00;
+  font-family: 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace;
+  font-size: 13px;
+}
+
+.DocumentationPanel .search-box-outer {
+  border: 1px solid #d3d6db;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 12px;
+  height: 24px;
+  margin-bottom: 12px;
+  padding: 3px 8px 5px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.DocumentationPanel .search-box-input {
+  border: 0;
+  font-size: 12px;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  width: 100%;
+}
