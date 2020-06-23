@@ -18,8 +18,8 @@ function AddTodos() {
       const addTodoData = response.data.addTodo;
       const { todos } = client.readQuery({ query: TODOS });
       // 현재 client의 캐싱된 query를 read하고
-      console.log(todos, 'todos');
-      console.log(addTodoData, 'addTodoData');
+      // console.log(todos, 'todos');
+      // console.log(addTodoData, 'addTodoData');
       // 현재의 todos의 값과 변경된 addTodoData의 값을 합쳐서 write해주면서 캐싱을 업데이트 해줘야함
       client.writeQuery({
         query: TODOS,
