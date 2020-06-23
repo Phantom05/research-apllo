@@ -1,10 +1,18 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { Home, SignIn } from 'pages';
+import { Helmet } from 'react-helmet';
 
-class App extends React.Component {
-  render() {
-    const { name } = this.props;
-    return <h1>Hello {name}</h1>;
-  }
+function App() {
+  return (
+    <>
+      <Helmet title={`GraphQL Apollo`} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={SignIn} />
+      </Switch>
+    </>
+  );
 }
 
 export default App;
