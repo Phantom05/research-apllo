@@ -1,0 +1,23 @@
+type Photo {
+    id: Int!
+    albumId: Int
+    title: String
+    url: String
+    thumbnailUrl: String
+}
+
+type Album {
+    id: Int!
+    userId: Int!
+    title: String!
+}
+
+type AlbumThumbnail {
+    thumbnailUrl: String
+}
+
+type Query{
+    photos(albumId: Int, current: Int, limit: Int): [Photo]
+    albums(current: Int, limit: Int): [Album]
+    albumThumbnail(albumId: Int): AlbumThumbnail
+}

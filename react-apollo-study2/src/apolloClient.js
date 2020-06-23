@@ -2,8 +2,9 @@ import ApolloClient from 'apollo-boost';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
+// 'https://countries.trevorblades.com'
 const client = new ApolloClient({
-  uri: 'https://countries.trevorblades.com',
+  uri: 'https://plp0mopxq.sse.codesandbox.io/',
   cache: new InMemoryCache(),
 });
 export default client;
