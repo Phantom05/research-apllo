@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel  src/index.html -p 9900",
+    "start": "parcel  src/index.html -p 9800",
     "clean": "rm dist/bundle.js",
     "build-prod": "parcel build src/index.html",
     "server": "node src/server/test.server.js localhost 4000",
