@@ -84,3 +84,12 @@ export const GET_TODOS = gql`
     }
   }
 `;
+
+export const TEST = gql`
+  fragment todosTest on Character {
+    todos {
+      id
+      type
+    }
+  }
+`;
