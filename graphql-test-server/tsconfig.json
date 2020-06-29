@@ -19,6 +19,9 @@
     "isolatedModules": false,
     "outDir": "dist"
   },
+  "mime": {
+    "text/x-typescript": ["ts", "tsx"]
+  },
   "exclude": ["dist"],
   "include": ["**/*.ts"]
 }

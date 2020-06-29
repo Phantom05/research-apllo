@@ -1,4 +1,4 @@
-import { getUser } from "../../operations/users-operations";
+import { getUser } from '../../operations/users-operations';
 
 const UserQueries = {
   Query: {
@@ -11,8 +11,7 @@ const UserQueries = {
     //     throw new Error("Not Found!");
     //   }
     // },
-    // ping: () => "pon122g",
-    // todos: () => todos,
+    ping: () => 'pon122g',
   },
 };
 

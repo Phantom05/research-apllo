@@ -1,23 +1,31 @@
-import { users, todos } from "./db";
+import { users, todos } from './db';
 
 module.exports = {
   Query: {
     users: () => users,
     findUser: (parent, { id }) => {
-      const user = users.find((user) => user.id === id);
+      const user = users.find(user => user.id === id);
       if (user) {
         return user;
       } else {
-        throw new Error("Not Found!");
+        throw new Error('Not Found!');
       }
     },
-    ping: () => "pon122g",
+    ping: () => 'pon122g',
     todos: () => todos,
+    findTodo: (parent, { id }) => {
+      const todo = todos.find(todo => todo.id === id);
+      if (todo) {
+        return todo;
+      } else {
+        throw new Error('Not Found!');
+      }
+    },
   },
 
   Mutation: {
     deleteUser: (parent, { id }) => {
-      const index = users.findIndex((user) => user.id === id);
+      const index = users.findIndex(user => user.id === id);
       if (index < 0) return false;
       users.splice(index, 1);
       return true;
@@ -32,7 +40,7 @@ module.exports = {
       return true;
     },
     updateUser: (parent, { id, name }) => {
-      const index = users.findIndex((user) => user.id === id);
+      const index = users.findIndex(user => user.id === id);
       if (index < 0) return false;
       const updateFormat = {
         id,
