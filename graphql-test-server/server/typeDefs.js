@@ -16,8 +16,8 @@ module.exports = gql`
     id: ID!
     title: String
     completed: Boolean
-    list: [List]
-    obj: Obj
+    # list: [List]
+    # obj: Obj
   }
 
   type Query {

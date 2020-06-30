@@ -1,3 +1,16 @@
 {
-  "presets": ["@babel/preset-env"]
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        // root 폴더 설정
+        "root": "./server",
+        "alias": {
+          "common": "./src/common",
+          "test": "./src/test"
+        }
+      }
+    ]
+  ]
 }
