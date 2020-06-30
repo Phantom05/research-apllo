@@ -1,14 +1,21 @@
-import { ApolloServer } from 'apollo-server';
+import express from 'express';
+import cors from 'cors';
+import { ApolloServer } from 'apollo-server-express';
+
 import typeDefs from 'typeDefs';
 import resolvers from 'resolvers';
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+const PORT = 4000;
+const schema = { typeDefs, resolvers };
+const server = new ApolloServer(schema);
 
-server.listen().then(({ url }) => {
-  console.log(`Run ar ${url}`);
+const app = express();
+app.use(cors());
+
+server.applyMiddleware({ app });
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
 });
 
 // import { typeDefs, resolvers } from './schema';
