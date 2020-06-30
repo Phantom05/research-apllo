@@ -22,26 +22,45 @@ const typeDefs = gql`
     # obj: Obj
   }
 
+  type UpdateUser {
+    id: ID!
+    name: String!
+  }
+
+  interface Test {
+    id: ID!
+    name: String
+  }
+  type _FindUser implements Test {
+    id: ID!
+    name: String
+  }
+
+  type _AddTodoPayload {
+    result: Int
+  }
+  type _UpdateTodoPayload {
+    result: Int
+  }
+  type _DeleteTodoPayload {
+    result: Int
+  }
+
   type Query {
-    ping: String
     users: [User]
     todos: [Todo]
     findUser(id: ID!): User
     findTodo(id: ID!): Todo
     findList(id: String): List
   }
-  type UpdateUser {
-    id: ID!
-    name: String!
-  }
 
   type Mutation {
     deleteUser(id: ID!): Boolean
     addUser(name: ID!): Boolean
-    addTodo(title: String!): Boolean
     updateUser(id: ID!, name: ID!): Boolean
-    deleteTodo(id: ID!): Boolean
-    updateTodo(id: ID!, title: String, completed: Boolean): Boolean
+    addTodo(title: String!): _AddTodoPayload
+    deleteTodo(id: ID!): _DeleteTodoPayload
+    updateTodo(id: ID!, title: String, completed: Boolean): _UpdateTodoPayload
     # addTodo(title: String!): [Todo]
     # updateTodo(id: ID!, title: String, completed: Boolean): [Todo]
     # addTodo(title: ID!): Boolean

@@ -1,8 +1,8 @@
 import { users } from 'db/users-db';
 
-export const getUsers = () => users;
+export const getUsers = async () => users;
 
-export const findUser = (parent, { id }) => {
+export const findUser = async (parent, { id }) => {
   const user = users.find(user => user.id === id);
   if (user) {
     return user;
@@ -11,24 +11,24 @@ export const findUser = (parent, { id }) => {
   }
 };
 
-export const deleteUser = (parent, { id }) => {
+export const deleteUser = async (parent, { id }) => {
   const index = users.findIndex(user => user.id === id);
   if (index < 0) return false;
   users.splice(index, 1);
   return true;
 };
 
-export const addUser = (parent, { name }) => {
+export const addUser = async (parent, { name }) => {
   const addFormat = {
     id: users.length, // uuid로 변경
     name,
   };
   if (!name) return false;
   users.push(addFormat);
-  return true;
+  return { result: true };
 };
 
-export const updateUser = (parent, { id, name }) => {
+export const updateUser = async (parent, { id, name }) => {
   const index = users.findIndex(user => user.id === id);
   if (index < 0) return false;
   const updateFormat = {

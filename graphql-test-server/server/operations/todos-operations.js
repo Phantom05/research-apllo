@@ -1,7 +1,8 @@
 import { todos } from 'db/todos-db';
 
-export const getTodos = () => todos;
-export const findTodo = (parent, { id }) => {
+export const getTodos = async () => todos;
+export const findTodo = async (parent, { id }, ctx, info) => {
+  console.log(ctx);
   const todo = todos.find(todo => todo.id === id);
   if (todo) {
     return todo;
@@ -9,23 +10,23 @@ export const findTodo = (parent, { id }) => {
     throw new Error('Not Found!');
   }
 };
-export const addTodo = (parent, { title }) => {
+export const addTodo = async (parent, { title }) => {
   const todoFormat = {
     id: todos.length + 1,
     completed: false,
     title,
   };
   todos.push(todoFormat);
-  return true;
+  return { result: 1 };
 };
 
-export const deleteTodo = (parent, { id }) => {
+export const deleteTodo = async (parent, { id }) => {
   const index = todos.findIndex(todo => todo.id === id);
   if (index < 0) return false;
   todos.splice(index, 1);
-  return true;
+  return { result: 1 };
 };
-export const updateTodo = (parent, { id, title, completed }) => {
+export const updateTodo = async (parent, { id, title, completed }) => {
   const todo = todos.find(todo => todo.id === id);
   const index = todos.findIndex(todo => todo.id === id);
   if (index < 0 || !todo) return false;
@@ -35,11 +36,11 @@ export const updateTodo = (parent, { id, title, completed }) => {
     title,
   };
   todos.splice(index, 1, todoFormat);
-  return true;
+  return { result: 1 };
   // return true;
 };
 
-export const findList = (parent, { id }, test) => {
+export const findList = async (parent, { id }, test) => {
   console.log(test, 'test');
   console.log('findList');
   console.log(id, 'id');

@@ -15,7 +15,6 @@ const resolvers = {
     todos: getTodos,
     findTodo: findTodo,
     findList: findList,
-    ping: () => 'pon122g',
   },
 
   Mutation: {
