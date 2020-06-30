@@ -1,5 +1,5 @@
-import { getTodos, findTodo } from 'operations/todos-operations';
 import { getUsers, findUser, deleteUser, addUser, updateUser } from 'operations/users-operations';
+import { getTodos, findTodo, addTodo, deleteTodo } from 'operations/todos-operations';
 
 module.exports = {
   Query: {
@@ -14,8 +14,7 @@ module.exports = {
     deleteUser: deleteUser,
     addUser: addUser,
     updateUser: updateUser,
-    // deleteTodo: (_, { id }) => {
-    //   const index = todos.findIndex(todo);
-    // },
+    addTodo: addTodo,
+    deleteTodo: deleteTodo,
   },
 };

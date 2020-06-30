@@ -36,5 +36,8 @@ module.exports = gql`
     deleteUser(id: ID!): Boolean
     addUser(name: ID!): Boolean
     updateUser(id: ID!, name: ID!): Boolean
+    addTodo(title: String!): [Todo]
+    deleteTodo(id: ID!): Boolean
+    # addTodo(title: ID!): Boolean
   }
 `;
