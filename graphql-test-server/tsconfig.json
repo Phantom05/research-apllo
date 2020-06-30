@@ -17,11 +17,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./server"
   },
   "mime": {
     "text/x-typescript": ["ts", "tsx"]
   },
-  "exclude": ["dist"],
+  // "exclude": ["dist"],
   "include": ["**/*.ts"]
 }

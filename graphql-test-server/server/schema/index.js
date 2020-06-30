@@ -28,4 +28,11 @@
 // };
 // export default schema;
 
-export const hello = 'world';
+import typeDefs from 'typeDefs';
+import resolvers from 'resolvers';
+
+const schema = {
+  typeDefs,
+  resolvers,
+};
+export default schema;

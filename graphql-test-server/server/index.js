@@ -1,19 +1,20 @@
-import express from 'express';
-import { ApolloServer, gql } from 'apollo-server';
-import { GraphQLSchema, GraphQLObjectType } from 'graphql';
-import typeDefs from './typeDefs';
-import resolvers from './resolvers';
+import { ApolloServer } from 'apollo-server';
+import typeDefs from 'typeDefs';
+import resolvers from 'resolvers';
 
 const server = new ApolloServer({
-  // schema,
   typeDefs,
   resolvers,
-  // resolvers: combineQueris,
 });
 
 server.listen().then(({ url }) => {
   console.log(`Run ar ${url}`);
 });
+
+// import { typeDefs, resolvers } from './schema';
+// import { GraphQLSchema, GraphQLObjectType } from 'graphql';
+// schema,
+// resolvers: combineQueris,
 
 // import TodoQueries from './schema/todos/TodoQueries';
 // import UserQueries from './schema/users/UserQueries';

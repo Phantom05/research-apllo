@@ -16,7 +16,7 @@ export const addTodo = (_, { title }) => {
     title,
   };
   todos.push(todoFormat);
-  return todos;
+  return true;
 };
 
 export const deleteTodo = (_, { id }) => {
@@ -24,4 +24,17 @@ export const deleteTodo = (_, { id }) => {
   if (index < 0) return false;
   todos.splice(index, 1);
   return true;
+};
+export const updateTodo = (_, { id, title, completed }) => {
+  const todo = todos.find(todo => todo.id === id);
+  const index = todos.findIndex(todo => todo.id === id);
+  if (index < 0 || !todo) return false;
+  const todoFormat = {
+    id: todo.id,
+    completed: !!completed,
+    title,
+  };
+  todos.splice(index, 1, todoFormat);
+  return true;
+  // return true;
 };
